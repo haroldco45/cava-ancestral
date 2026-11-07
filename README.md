@@ -4,7 +4,7 @@ App (PWA) de Cava Ancestral, tienda de vinos y licores artesanales en Caucasia, 
 
 - WhatsApp: +57 322 738 1932 · Instagram: @cavaancestral
 - Horario: todos los días, 10:00 a. m. – 10:00 p. m. (hora de Colombia)
-- URL: https://cava-ancestral.netlify.app
+- URL: https://cava-ancestra.netlify.app
 
 ## Qué trae
 - Verificación de mayoría de edad al entrar (+18)
