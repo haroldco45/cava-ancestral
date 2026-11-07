@@ -85,7 +85,7 @@ nav a:hover{background:rgba(255,255,255,.1)}
 .b-gold{background:var(--oro);color:var(--vino)}
 .b-line{border:1.5px solid rgba(255,255,255,.5);color:#fff;background:transparent}
 .stage{position:relative;height:520px}
-.stage img{position:absolute;bottom:0;height:480px;width:auto;border-radius:18px;box-shadow:0 25px 60px rgba(0,0,0,.5);transition:all .9s cubic-bezier(.2,.8,.2,1);object-fit:cover}
+.stage img{position:absolute;bottom:0;height:480px;width:auto;max-width:none;border-radius:18px;box-shadow:0 25px 60px rgba(0,0,0,.5);transition:all .9s cubic-bezier(.2,.8,.2,1)}
 .stage img.p0{left:50%;transform:translateX(-50%) scale(1);z-index:3;opacity:1}
 .stage img.p1{left:6%;transform:scale(.78) rotate(-6deg);z-index:2;opacity:.8;filter:brightness(.75)}
 .stage img.px{left:50%;transform:translateX(-50%) scale(.6);z-index:1;opacity:0}
@@ -114,9 +114,9 @@ section{padding:70px 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px}
 .card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(58,15,20,.09);display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
 .card:hover{transform:translateY(-6px);box-shadow:0 20px 45px rgba(58,15,20,.18)}
-.card .ph{position:relative;height:380px;overflow:hidden;background:#e9dccc}
-.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
-.card:hover .ph img{transform:scale(1.07)}
+.card .ph{position:relative;height:420px;overflow:hidden;background:radial-gradient(circle at 50% 40%,#fff,#efe3d4);padding:46px 14px 10px}
+.card .ph img{width:100%;height:100%;object-fit:contain;transition:transform 1.2s}
+.card:hover .ph img{transform:scale(1.04)}
 .tag{position:absolute;top:14px;left:14px;background:var(--vino);color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 10px;border-radius:20px}
 .tag.alt{left:auto;right:14px;background:var(--oro);color:var(--vino)}
 .card .bd{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
@@ -137,24 +137,33 @@ section{padding:70px 0}
 .pair{background:linear-gradient(180deg,#fff,var(--crema))}
 .ptabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:24px}
 .pbox{display:grid;grid-template-columns:320px 1fr;gap:30px;align-items:center;background:#fff;border-radius:22px;padding:26px;box-shadow:0 10px 30px rgba(58,15,20,.08)}
-.pbox img{height:380px;width:100%;object-fit:cover;border-radius:16px}
+.pbox img{height:420px;width:100%;object-fit:contain;border-radius:16px;background:#f3ebe1}
 .pbox h3{font-size:34px;color:var(--vino);margin-bottom:8px}
 .pbox ul{list-style:none;display:grid;gap:12px;margin-top:16px}
 .pbox li{padding:12px 16px;background:var(--crema);border-left:4px solid var(--oro);border-radius:8px;font-size:15px}
 .pbox li b{color:var(--vino)}
-@media(max-width:760px){.pbox{grid-template-columns:1fr}.pbox img{height:300px}}
+@media(max-width:760px){.pbox{grid-template-columns:1fr}.pbox img{height:380px}}
 
 /* Ocasiones */
 .occ{background:var(--vino);color:#fff}
 .occ .head h2{color:var(--oro2)}.occ .head p{color:#e6cfc6}
 .ogrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.ocard{position:relative;border-radius:18px;overflow:hidden;min-height:260px;display:flex;align-items:flex-end}
-.ocard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.55);transition:transform 1s}
-.ocard:hover img{transform:scale(1.08)}
-.ocard div{position:relative;padding:20px}
+.ocard{border-radius:18px;overflow:hidden;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column}
+.ocard img{width:100%;height:340px;object-fit:contain;background:#2a0a0e;transition:transform 1s}
+.ocard:hover img{transform:scale(1.03)}
+.ocard div{padding:18px 20px}
 .ocard h3{font-size:26px;color:var(--oro2)}
 .ocard p{font-size:14px;color:#f3e5de}
 
+/* Galería */
+.gal{columns:3 260px;column-gap:16px}
+.gal figure{break-inside:avoid;margin:0 0 16px;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(58,15,20,.1);cursor:zoom-in}
+.gal img{width:100%;height:auto;transition:transform .8s}
+.gal figure:hover img{transform:scale(1.03)}
+.gal figcaption{padding:10px 14px;font-size:13px;color:#5b4547}
+#lb{position:fixed;inset:0;z-index:90;background:rgba(10,2,3,.92);display:none;align-items:center;justify-content:center;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:92vh;object-fit:contain;border-radius:10px}
 /* Historia / Contacto */
 .story{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
 .story .lg{background:#fff;border-radius:22px;padding:30px;box-shadow:0 10px 30px rgba(58,15,20,.08)}
@@ -178,7 +187,7 @@ section{padding:70px 0}
 @keyframes slide{from{transform:translateX(100%)}}
 .pn h2{font-size:32px;color:var(--vino);margin-bottom:14px}
 .line{display:flex;gap:12px;align-items:center;background:#fff;border-radius:12px;padding:10px;margin-bottom:10px}
-.line img{width:52px;height:70px;object-fit:cover;border-radius:8px}
+.line img{width:52px;height:70px;object-fit:contain;background:#f3ebe1;border-radius:8px}
 .line div{flex:1;font-size:14px}
 .line b{display:block;color:var(--vino)}
 .x{background:none;border:0;color:var(--gris);font-size:13px;text-decoration:underline}
@@ -199,7 +208,7 @@ footer p{margin-bottom:8px}
 #modal{position:fixed;inset:0;z-index:70;background:rgba(20,5,7,.7);display:none;align-items:center;justify-content:center;padding:18px}
 #modal.on{display:flex}
 #modal .mb{background:#fff;border-radius:20px;max-width:760px;width:100%;max-height:92vh;overflow:auto;display:grid;grid-template-columns:300px 1fr}
-#modal .mb img{width:100%;height:100%;min-height:380px;object-fit:cover}
+#modal .mb img{width:100%;height:100%;min-height:380px;max-height:92vh;object-fit:contain;background:#f3ebe1}
 #modal .mt{padding:24px;position:relative}
 #modal h3{font-size:34px;color:var(--vino)}
 #modal p{margin:10px 0;color:#5b4547;font-size:15px}
@@ -229,6 +238,7 @@ footer p{margin-bottom:8px}
       <a href="#vinos" data-i="n1">Vinos</a>
       <a href="#maridaje" data-i="n2">Maridaje</a>
       <a href="#ocasiones" data-i="n3">Regalos</a>
+      <a href="#galeria" data-i="n6">Galería</a>
       <a href="#contacto" data-i="n4">Contacto</a>
       <button class="lang" onclick="setLang(lang==='es'?'en':'es')" id="lbtn">EN</button>
       <button class="cartbtn" onclick="openCart()"><span data-i="n5">Pedido</span> (<span id="cc">0</span>)</button>
@@ -265,7 +275,7 @@ footer p{margin-bottom:8px}
     <div class="head reveal">
       <span class="eyebrow" style="color:var(--uva)" data-i="v_e">Nuestra cava</span>
       <h2 data-i="v_t">Vinos artesanales</h2>
-      <p data-i="v_p">Botellas de 750 ml y mini de 178 ml, elaboradas en Colombia por productores artesanales. Escoge, suma a tu pedido y lo enviamos por WhatsApp.</p>
+      <p data-i="v_p">Botellas de 750 ml, personales de 330 ml y mini de 178 ml, elaboradas en Colombia por productores artesanales. Escoge, suma a tu pedido y lo enviamos por WhatsApp.</p>
     </div>
     <div class="filters" id="filters"></div>
     <div class="grid" id="grid"></div>
@@ -293,6 +303,17 @@ footer p{margin-bottom:8px}
     </div>
     <div class="ogrid" id="ogrid"></div>
     <div style="text-align:center;margin-top:28px"><a class="btn b-gold" target="_blank" rel="noopener" id="waGift" data-i="o_b">Cotizar regalos por WhatsApp</a></div>
+  </div>
+</section>
+
+<section id="galeria" style="background:#fff">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" style="color:var(--uva)" data-i="ga_e">Fotos reales</span>
+      <h2 data-i="ga_t">Galería de la cava</h2>
+      <p data-i="ga_p">Así lucen nuestros vinos en el stand. Toca una foto para verla en grande.</p>
+    </div>
+    <div class="gal" id="gal"></div>
   </div>
 </section>
 
@@ -350,6 +371,7 @@ footer p{margin-bottom:8px}
 <a class="fab" target="_blank" rel="noopener" id="waFab">WhatsApp</a>
 <button id="install" data-i="inst">Instalar app</button>
 <div id="toast"></div>
+<div id="lb" onclick="this.classList.remove('on')"><img id="lbi" alt=""></div>
 
 <div id="modal" onclick="if(event.target===this)this.classList.remove('on')"><div class="mb" id="mb"></div></div>
 
@@ -385,7 +407,7 @@ const VINOS=[
  {id:'siduri-lulo',img:'img/siduri-lulo.jpg',marca:'Siduri',precio:0,tipo:'blanco',
   n:{es:'Lulo',en:'Lulo'},
   d:{es:'Vino artesanal joven y semiseco de lulo. Fresco, ácido y aromático. Se recomienda refrigerar después de destapar.',en:'Young, semi-dry craft wine made from lulo. Fresh, tangy and aromatic. Keep refrigerated after opening.'},
-  s:{es:['750 ml','Vino joven','Semiseco','Servir bien frío'],en:['750 ml','Young wine','Semi-dry','Serve well chilled']},
+  s:{es:['750 ml','12% Alc.','Vino joven','Semiseco'],en:['750 ml','12% ABV','Young wine','Semi-dry']},
   tag:{es:'Fresco',en:'Fresh'}},
  {id:'siduri-mora-cafe',img:'img/siduri-mora-cafe.jpg',marca:'Siduri',precio:0,tipo:'dulce',
   n:{es:'Mora & Café',en:'Blackberry & Coffee'},
@@ -401,26 +423,48 @@ const VINOS=[
   n:{es:'Corozo Mini',en:'Corozo Mini'},
   d:{es:'El mismo vino artesanal de corozo de Ayapel en botellita de 178 ml: perfecto para probarlo, para detalles y recordatorios de evento.',en:'The same Ayapel corozo craft wine in a 178 ml mini bottle: perfect to try it, for small gifts and event favors.'},
   s:{es:['178 ml','8% Alc.','Ayapel, Córdoba','Ideal para detalles'],en:['178 ml','8% ABV','Ayapel, Córdoba','Great for favors']},
-  tag:{es:'Mini',en:'Mini'}}
+  tag:{es:'Mini',en:'Mini'}},
+ {id:'contra-corriente-330',img:'img/minis-330.jpg',marca:'Contra Corriente',precio:0,tipo:'dulce',ml:'330 ml',
+  n:{es:'Uva Isabella 330 ml',en:'Isabella Grape 330 ml'},
+  d:{es:'La botella personal de Contra Corriente: el mismo vino dulce de uva isabella en 330 ml, lista para regalar con su moño y flores.',en:'The personal-size Contra Corriente: the same sweet Isabella grape wine in 330 ml, gift-ready with ribbon and flowers.'},
+  s:{es:['330 ml','12% Alc.','Dulce','Para regalar'],en:['330 ml','12% ABV','Sweet','Gift-ready']},
+  tag:{es:'Personal',en:'Personal'}},
+ {id:'siduri-mora-cafe-330',img:'img/minis-330.jpg',marca:'Siduri',precio:0,tipo:'dulce',ml:'330 ml',
+  n:{es:'Mora & Café 330 ml',en:'Blackberry & Coffee 330 ml'},
+  d:{es:'Siduri Mora & Café en botella personal de 330 ml: dulce, con notas de café, ideal como detalle o para probarlo.',en:'Siduri Blackberry & Coffee in a 330 ml personal bottle: sweet with coffee notes, a perfect small gift.'},
+  s:{es:['330 ml','Dulce','Mora y café','Para regalar'],en:['330 ml','Sweet','Blackberry & coffee','Gift-ready']},
+  tag:{es:'Personal',en:'Personal'}}
 ];
 const PAIR={
  'sabana-toro':{es:[['Carnes asadas','Res, cerdo o chorizo a la brasa.'],['Quesos costeños','Queso costeño, de capa o mozzarella.'],['Servicio','Ligeramente frío, entre 12 y 14 °C.']],en:[['Grilled meats','Beef, pork or chorizo off the grill.'],['Coastal cheeses','Queso costeño or fresh mozzarella.'],['Serving','Lightly chilled, 12–14 °C.']]},
  'siduri-lulo':{es:[['Pescado y mariscos','Bocachico frito, ceviche, camarones.'],['Comida picante','Equilibra el ají y las salsas.'],['Servicio','Bien frío, entre 6 y 8 °C. Refrigerar tras destapar.']],en:[['Fish & seafood','Fried fish, ceviche, shrimp.'],['Spicy food','Balances chili and hot sauces.'],['Serving','Well chilled, 6–8 °C. Refrigerate after opening.']]},
  'contra-corriente':{es:[['Quesos y frutas','Tabla de quesos suaves, uvas y bocadillo.'],['Postres','Tortas, flan o arroz con leche.'],['Servicio','Frío, entre 8 y 10 °C.']],en:[['Cheese & fruit','Mild cheese board, grapes and guava paste.'],['Desserts','Cakes, flan or rice pudding.'],['Serving','Chilled, 8–10 °C.']]},
  'sabana-toro-mini':{es:[['Picadas','Chicharrón, butifarra, queso frito.'],['Detalles','Recordatorios de boda, grado o empresa.'],['Servicio','Ligeramente frío, entre 12 y 14 °C.']],en:[['Snack platters','Pork rinds, sausage, fried cheese.'],['Favors','Wedding, graduation or company gifts.'],['Serving','Lightly chilled, 12–14 °C.']]},
+ 'contra-corriente-330':{es:[['Quesos y frutas','Tabla de quesos suaves, uvas y bocadillo.'],['Detalle','Con su moño y flores, lista para regalar.'],['Servicio','Frío, entre 8 y 10 °C.']],en:[['Cheese & fruit','Mild cheese, grapes and guava paste.'],['Gift','With ribbon and flowers, ready to give.'],['Serving','Chilled, 8–10 °C.']]},
+ 'siduri-mora-cafe-330':{es:[['Postres','Brownie, torta de chocolate, cuchareables.'],['Detalle','Perfecta para un regalo pequeño.'],['Servicio','Frío, entre 8 y 10 °C.']],en:[['Desserts','Brownies, chocolate cake, sweet treats.'],['Gift','Perfect as a small gift.'],['Serving','Chilled, 8–10 °C.']]},
  'siduri-mora-cafe':{es:[['Postres','Torta de chocolate, brownie, cuchareables.'],['Sobremesa','Después de la comida, con un buen tinto.'],['Servicio','Frío, entre 8 y 10 °C.']],en:[['Desserts','Chocolate cake, brownies, sweet treats.'],['After dinner','Paired with a cup of Colombian coffee.'],['Serving','Chilled, 8–10 °C.']]}
 };
 const OCC=[
- {img:'img/sabana-toro.jpg',es:['Navidad y fin de año','La botella de la cena familiar, con sabor de la región.'],en:['Christmas & New Year','The bottle for the family dinner, with a local taste.']},
- {img:'img/siduri-mora-cafe.jpg',es:['Regalo especial','Mora & Café para quien ama lo dulce y el café.'],en:['Special gift','Blackberry & Coffee for those who love sweets and coffee.']},
+ {img:'img/sabana-toro-estante.jpg',es:['Navidad y fin de año','La botella de la cena familiar, con sabor de la región.'],en:['Christmas & New Year','The bottle for the family dinner, with a local taste.']},
+ {img:'img/minis-330.jpg',es:['Regalo especial','Botellas personales de 330 ml con moño y flores.'],en:['Special gift','330 ml personal bottles with ribbon and flowers.']},
  {img:'img/sabana-toro-mini.jpg',es:['Recordatorios y detalles','Botellitas de 178 ml para bodas, grados y empresas.'],en:['Favors & small gifts','178 ml minis for weddings, graduations and companies.']},
- {img:'img/contra-corriente.jpg',es:['Detalles de empresa','Pedidos de varias botellas para clientes y equipo.'],en:['Corporate gifts','Multi-bottle orders for clients and staff.']}
+ {img:'img/contra-corriente-girasol.jpg',es:['Detalles de empresa','Pedidos de varias botellas para clientes y equipo.'],en:['Corporate gifts','Multi-bottle orders for clients and staff.']}
 ];
+const GAL=[
+ ['img/contra-corriente-mano.jpg',{es:'Contra Corriente, uva isabella 750 ml',en:'Contra Corriente, Isabella grape 750 ml'}],
+ ['img/minis-330.jpg',{es:'Botellas personales de 330 ml',en:'330 ml personal bottles'}],
+ ['img/sabana-toro-estante.jpg',{es:'Sabana & Toro, vino de corozo',en:'Sabana & Toro, corozo wine'}],
+ ['img/siduri-lulo-2.jpg',{es:'Siduri Lulo, semiseco',en:'Siduri Lulo, semi-dry'}],
+ ['img/contra-corriente-girasol.jpg',{es:'Listo para regalar',en:'Ready to gift'}],
+ ['img/sabana-toro-mini.jpg',{es:'Sabana & Toro mini 178 ml',en:'Sabana & Toro mini 178 ml'}],
+ ['img/siduri-mora-cafe.jpg',{es:'Siduri Mora & Café',en:'Siduri Blackberry & Coffee'}]
+];
+function zoom(src){$('#lbi').src=src;$('#lb').classList.add('on')}
 const T={
  es:{g_t:'¿Eres mayor de 18 años?',g_p:'Para entrar a Cava Ancestral debes ser mayor de edad. La venta de bebidas alcohólicas a menores de edad está prohibida en Colombia.',g_si:'Sí, soy mayor',g_no:'No',g_lang:'English',
-  n1:'Vinos',n2:'Maridaje',n3:'Regalos',n4:'Contacto',n5:'Pedido',
+  n1:'Vinos',n2:'Maridaje',n3:'Regalos',n4:'Contacto',n5:'Pedido',n6:'Galería',ga_e:'Fotos reales',ga_t:'Galería de la cava',ga_p:'Así lucen nuestros vinos en el stand. Toca una foto para verla en grande.',
   h_e:'Licores artesanales · Caucasia, Antioquia',h_t:'El sabor de nuestra tierra, <em>en una copa</em>',h_p:'Vinos artesanales hechos con frutos de la región: corozo de la sabana de Ayapel, uva isabella, lulo y mora con café. Pídelos por WhatsApp y te los llevamos.',h_b1:'Ver los vinos',h_b2:'Pedir por WhatsApp',
-  v_e:'Nuestra cava',v_t:'Vinos artesanales',v_p:'Botellas de 750 ml y mini de 178 ml, elaboradas en Colombia por productores artesanales. Escoge, suma a tu pedido y lo enviamos por WhatsApp.',
+  v_e:'Nuestra cava',v_t:'Vinos artesanales',v_p:'Botellas de 750 ml, personales de 330 ml y mini de 178 ml, elaboradas en Colombia por productores artesanales. Escoge, suma a tu pedido y lo enviamos por WhatsApp.',
   m_e:'Cómo disfrutarlos',m_t:'Maridaje y servicio',m_p:'Toca cada vino y mira con qué comidas de la casa queda mejor y cómo servirlo.',
   o_e:'Para regalar',o_t:'Una botella para cada ocasión',o_p:'Navidad, fin de año, cumpleaños o un detalle para la empresa. Pregunta por pedidos de varias botellas.',o_b:'Cotizar regalos por WhatsApp',
   s_e:'Quiénes somos',s_t:'Lo ancestral se guarda en la cava',s_p1:'Cava Ancestral es una tienda de licores artesanales en Caucasia. Reunimos vinos hechos a mano por productores de la región, con frutos que conocemos desde siempre.',s_p2:'Del corozo de las sabanas de Ayapel, Córdoba, al lulo y la mora con café: sabores nuestros, con la calidez de lo que se hace en casa.',
@@ -433,12 +477,12 @@ const T={
   open:'Abierto ahora · cierra a las 10:00 p. m.',closed:'Cerrado ahora · abre a las 10:00 a. m.',empty:'Aún no has agregado botellas.',quitar:'Quitar',added:'Agregado al pedido',need:'Agrega al menos una botella',need18:'Confirma que eres mayor de 18 años',
   days:['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],hr:'10:00 a. m. – 10:00 p. m.',
   waHi:'Hola Cava Ancestral, vi su app y quiero hacer un pedido.',waGift:'Hola Cava Ancestral, quiero cotizar botellas para regalo.',
-  tk:['Vino de corozo de Ayapel','Nuevo: Contra Corriente uva isabella','Sabana & Toro mini 178 ml','Siduri Lulo','Siduri Mora & Café','Domicilios en Caucasia','Abierto todos los días 10 a. m. – 10 p. m.','Regalos de Navidad'],
+  tk:['Vino de corozo de Ayapel','Nuevo: Contra Corriente uva isabella','Sabana & Toro mini 178 ml','Botellas personales de 330 ml','Siduri Lulo','Siduri Mora & Café','Domicilios en Caucasia','Abierto todos los días 10 a. m. – 10 p. m.','Regalos de Navidad'],
   noAge:'Gracias por tu honestidad. Vuelve cuando seas mayor de edad.'},
  en:{g_t:'Are you over 18?',g_p:'You must be of legal age to enter Cava Ancestral. Selling alcohol to minors is prohibited in Colombia.',g_si:'Yes, I am 18+',g_no:'No',g_lang:'Español',
-  n1:'Wines',n2:'Pairing',n3:'Gifts',n4:'Contact',n5:'Order',
+  n1:'Wines',n2:'Pairing',n3:'Gifts',n4:'Contact',n5:'Order',n6:'Gallery',ga_e:'Real photos',ga_t:'Cellar gallery',ga_p:'This is how our wines look at the stand. Tap a photo to see it full size.',
   h_e:'Craft liquors · Caucasia, Antioquia',h_t:'The taste of our land, <em>in a glass</em>',h_p:'Craft wines made with regional fruit: corozo from the Ayapel savanna, Isabella grapes, lulo, and blackberry with coffee. Order on WhatsApp and we deliver.',h_b1:'See the wines',h_b2:'Order on WhatsApp',
-  v_e:'Our cellar',v_t:'Craft wines',v_p:'750 ml bottles and 178 ml minis, made in Colombia by small craft producers. Pick, add to your order and send it on WhatsApp.',
+  v_e:'Our cellar',v_t:'Craft wines',v_p:'750 ml bottles, 330 ml personal bottles and 178 ml minis, made in Colombia by small craft producers. Pick, add to your order and send it on WhatsApp.',
   m_e:'How to enjoy them',m_t:'Pairing & serving',m_p:'Tap each wine to see which foods it goes best with and how to serve it.',
   o_e:'Gifting',o_t:'A bottle for every occasion',o_p:'Christmas, New Year, birthdays or a corporate gift. Ask about multi-bottle orders.',o_b:'Ask for gift prices on WhatsApp',
   s_e:'About us',s_t:'Ancestral flavors, kept in the cellar',s_p1:'Cava Ancestral is a craft liquor shop in Caucasia. We bring together handmade wines from local producers, made with fruits we have always known.',s_p2:'From the corozo of the Ayapel savannas in Córdoba to lulo and blackberry with coffee: our own flavors, with the warmth of homemade.',
@@ -451,7 +495,7 @@ const T={
   open:'Open now · closes at 10:00 p.m.',closed:'Closed now · opens at 10:00 a.m.',empty:'No bottles added yet.',quitar:'Remove',added:'Added to your order',need:'Add at least one bottle',need18:'Please confirm you are over 18',
   days:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],hr:'10:00 a.m. – 10:00 p.m.',
   waHi:'Hello Cava Ancestral, I saw your app and want to place an order.',waGift:'Hello Cava Ancestral, I would like a quote for gift bottles.',
-  tk:['Corozo wine from Ayapel','New: Contra Corriente Isabella grape','Sabana & Toro mini 178 ml','Siduri Lulo','Siduri Blackberry & Coffee','Delivery in Caucasia','Open daily 10 a.m. – 10 p.m.','Christmas gifts'],
+  tk:['Corozo wine from Ayapel','New: Contra Corriente Isabella grape','Sabana & Toro mini 178 ml','Botellas personales de 330 ml','Siduri Lulo','Siduri Blackberry & Coffee','Delivery in Caucasia','Open daily 10 a.m. – 10 p.m.','Christmas gifts'],
   noAge:'Thank you for your honesty. Please come back when you are of legal age.'}
 };
 let lang=(()=>{try{return localStorage.getItem('cava_lang')||'es'}catch(e){return 'es'}})();
@@ -490,6 +534,7 @@ function render(){
   const V=VINOS.find(v=>v.id===par);
   $('#pbox').innerHTML=`<img src="${V.img}" alt="${V.marca}"><div><span class="mk" style="font-size:12px;letter-spacing:2px;color:var(--uva);font-weight:700">${V.marca}</span><h3>${V.n[lang]}</h3><p style="color:#5b4547">${V.d[lang]}</p><ul>${PAIR[par][lang].map(p=>`<li><b>${p[0]}:</b> ${p[1]}</li>`).join('')}</ul></div>`;
   $('#ogrid').innerHTML=OCC.map(o=>`<div class="ocard reveal in"><img src="${o.img}" alt="" loading="lazy"><div><h3>${o[lang][0]}</h3><p>${o[lang][1]}</p></div></div>`).join('');
+  $('#gal').innerHTML=GAL.map(g=>`<figure onclick="zoom('${g[0]}')"><img src="${g[0]}" alt="${g[1][lang]}" loading="lazy"><figcaption>${g[1][lang]}</figcaption></figure>`).join('');
   const tk=t('tk').map(x=>`<span>${x}</span>`).join('<span>·</span>');$('#tk').innerHTML=tk+'<span>·</span>'+tk+'<span>·</span>';
   ['#waHero','#waC','#waFab'].forEach(s=>$(s).href=wa(t('waHi')));$('#waGift').href=wa(t('waGift'));
   status();count();lines();
