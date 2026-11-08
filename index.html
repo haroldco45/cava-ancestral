@@ -399,7 +399,7 @@ footer p{margin-bottom:8px}
 const WA='573227381932';
 /* Para poner precios: escribe el valor en "precio" (ej. 45000). En 0 sale "Precio por WhatsApp". */
 const VINOS=[
- {id:'sabana-toro',img:'img/sabana-toro.jpg',marca:'Sabana & Toro',precio:0,tipo:'tinto',
+ {id:'sabana-toro',img:'img/sabana-toro.jpg',pimg:'img/sabana-toro-pizza.jpg',marca:'Sabana & Toro',precio:0,tipo:'tinto',
   n:{es:'Vino de Corozo',en:'Corozo Palm-Fruit Wine'},
   d:{es:'Vino artesanal de corozo, el fruto rojo de las sabanas. Hecho en Ayapel, Córdoba: color rubí profundo, sabor frutal y ligero.',en:'Craft wine made from corozo, the red palm fruit of the savannas. Made in Ayapel, Córdoba: deep ruby color, light and fruity.'},
   s:{es:['750 ml','8% Alc.','Ayapel, Córdoba','Tinto de corozo'],en:['750 ml','8% ABV','Ayapel, Córdoba','Corozo red']},
@@ -436,7 +436,7 @@ const VINOS=[
   tag:{es:'Personal',en:'Personal'}}
 ];
 const PAIR={
- 'sabana-toro':{es:[['Carnes asadas','Res, cerdo o chorizo a la brasa.'],['Quesos costeños','Queso costeño, de capa o mozzarella.'],['Servicio','Ligeramente frío, entre 12 y 14 °C.']],en:[['Grilled meats','Beef, pork or chorizo off the grill.'],['Coastal cheeses','Queso costeño or fresh mozzarella.'],['Serving','Lightly chilled, 12–14 °C.']]},
+ 'sabana-toro':{es:[['Pizza y pastas','Va de maravilla con una pizza de tomate y queso.'],['Carnes asadas','Res, cerdo o chorizo a la brasa.'],['Quesos costeños','Queso costeño, de capa o mozzarella.'],['Servicio','Ligeramente frío, entre 12 y 14 °C.']],en:[['Pizza & pasta','Wonderful with a tomato and cheese pizza.'],['Grilled meats','Beef, pork or chorizo off the grill.'],['Coastal cheeses','Queso costeño or fresh mozzarella.'],['Serving','Lightly chilled, 12–14 °C.']]},
  'siduri-lulo':{es:[['Pescado y mariscos','Bocachico frito, ceviche, camarones.'],['Comida picante','Equilibra el ají y las salsas.'],['Servicio','Bien frío, entre 6 y 8 °C. Refrigerar tras destapar.']],en:[['Fish & seafood','Fried fish, ceviche, shrimp.'],['Spicy food','Balances chili and hot sauces.'],['Serving','Well chilled, 6–8 °C. Refrigerate after opening.']]},
  'contra-corriente':{es:[['Quesos y frutas','Tabla de quesos suaves, uvas y bocadillo.'],['Postres','Tortas, flan o arroz con leche.'],['Servicio','Frío, entre 8 y 10 °C.']],en:[['Cheese & fruit','Mild cheese board, grapes and guava paste.'],['Desserts','Cakes, flan or rice pudding.'],['Serving','Chilled, 8–10 °C.']]},
  'sabana-toro-mini':{es:[['Picadas','Chicharrón, butifarra, queso frito.'],['Detalles','Recordatorios de boda, grado o empresa.'],['Servicio','Ligeramente frío, entre 12 y 14 °C.']],en:[['Snack platters','Pork rinds, sausage, fried cheese.'],['Favors','Wedding, graduation or company gifts.'],['Serving','Lightly chilled, 12–14 °C.']]},
@@ -445,15 +445,17 @@ const PAIR={
  'siduri-mora-cafe':{es:[['Postres','Torta de chocolate, brownie, cuchareables.'],['Sobremesa','Después de la comida, con un buen tinto.'],['Servicio','Frío, entre 8 y 10 °C.']],en:[['Desserts','Chocolate cake, brownies, sweet treats.'],['After dinner','Paired with a cup of Colombian coffee.'],['Serving','Chilled, 8–10 °C.']]}
 };
 const OCC=[
- {img:'img/sabana-toro-estante.jpg',es:['Navidad y fin de año','La botella de la cena familiar, con sabor de la región.'],en:['Christmas & New Year','The bottle for the family dinner, with a local taste.']},
+ {img:'img/sabana-toro-regalo.jpg',es:['Navidad y fin de año','La botella de la cena familiar, con sabor de la región.'],en:['Christmas & New Year','The bottle for the family dinner, with a local taste.']},
  {img:'img/minis-330.jpg',es:['Regalo especial','Botellas personales de 330 ml con moño y flores.'],en:['Special gift','330 ml personal bottles with ribbon and flowers.']},
  {img:'img/sabana-toro-mini.jpg',es:['Recordatorios y detalles','Botellitas de 178 ml para bodas, grados y empresas.'],en:['Favors & small gifts','178 ml minis for weddings, graduations and companies.']},
  {img:'img/contra-corriente-girasol.jpg',es:['Detalles de empresa','Pedidos de varias botellas para clientes y equipo.'],en:['Corporate gifts','Multi-bottle orders for clients and staff.']}
 ];
 const GAL=[
+ ['img/sabana-toro-pizza.jpg',{es:'Sabana & Toro con pizza: plan perfecto',en:'Sabana & Toro with pizza: the perfect plan'}],
+ ['img/sabana-toro-regalo.jpg',{es:'Sabana & Toro con moño, listo para regalar',en:'Sabana & Toro with a bow, ready to gift'}],
+ ['img/sabana-toro-estante.jpg',{es:'Sabana & Toro en la cava',en:'Sabana & Toro in the cellar'}],
  ['img/contra-corriente-mano.jpg',{es:'Contra Corriente, uva isabella 750 ml',en:'Contra Corriente, Isabella grape 750 ml'}],
  ['img/minis-330.jpg',{es:'Botellas personales de 330 ml',en:'330 ml personal bottles'}],
- ['img/sabana-toro-estante.jpg',{es:'Sabana & Toro, vino de corozo',en:'Sabana & Toro, corozo wine'}],
  ['img/siduri-lulo-2.jpg',{es:'Siduri Lulo, semiseco',en:'Siduri Lulo, semi-dry'}],
  ['img/contra-corriente-girasol.jpg',{es:'Listo para regalar',en:'Ready to gift'}],
  ['img/sabana-toro-mini.jpg',{es:'Sabana & Toro mini 178 ml',en:'Sabana & Toro mini 178 ml'}],
@@ -532,7 +534,7 @@ function render(){
     <button class="add" onclick="add('${v.id}')">${t('add')}</button></div></div></article>`}).join('');
   $('#ptabs').innerHTML=VINOS.map(v=>`<button class="chip ${v.id===par?'on':''}" onclick="par='${v.id}';render()">${v.marca} ${v.n[lang]}</button>`).join('');
   const V=VINOS.find(v=>v.id===par);
-  $('#pbox').innerHTML=`<img src="${V.img}" alt="${V.marca}"><div><span class="mk" style="font-size:12px;letter-spacing:2px;color:var(--uva);font-weight:700">${V.marca}</span><h3>${V.n[lang]}</h3><p style="color:#5b4547">${V.d[lang]}</p><ul>${PAIR[par][lang].map(p=>`<li><b>${p[0]}:</b> ${p[1]}</li>`).join('')}</ul></div>`;
+  $('#pbox').innerHTML=`<img src="${V.pimg||V.img}" alt="${V.marca}"><div><span class="mk" style="font-size:12px;letter-spacing:2px;color:var(--uva);font-weight:700">${V.marca}</span><h3>${V.n[lang]}</h3><p style="color:#5b4547">${V.d[lang]}</p><ul>${PAIR[par][lang].map(p=>`<li><b>${p[0]}:</b> ${p[1]}</li>`).join('')}</ul></div>`;
   $('#ogrid').innerHTML=OCC.map(o=>`<div class="ocard reveal in"><img src="${o.img}" alt="" loading="lazy"><div><h3>${o[lang][0]}</h3><p>${o[lang][1]}</p></div></div>`).join('');
   $('#gal').innerHTML=GAL.map(g=>`<figure onclick="zoom('${g[0]}')"><img src="${g[0]}" alt="${g[1][lang]}" loading="lazy"><figcaption>${g[1][lang]}</figcaption></figure>`).join('');
   const tk=t('tk').map(x=>`<span>${x}</span>`).join('<span>·</span>');$('#tk').innerHTML=tk+'<span>·</span>'+tk+'<span>·</span>';

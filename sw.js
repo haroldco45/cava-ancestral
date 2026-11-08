@@ -1,7 +1,7 @@
 // Cava Ancestral — Service Worker · Desarrollada por Vibras Positivas HM
-const C = 'cava-ancestral-v3';
+const C = 'cava-ancestral-v4';
 const FILES = ['./', 'index.html', 'manifest.json', 'img/logo.jpg', 'img/icon-192.png', 'img/icon-512.png',
-  'img/sabana-toro.jpg', 'img/siduri-lulo.jpg', 'img/siduri-mora-cafe.jpg', 'img/contra-corriente.jpg', 'img/sabana-toro-mini.jpg', 'img/minis-330.jpg', 'img/contra-corriente-girasol.jpg', 'img/siduri-lulo-2.jpg', 'img/sabana-toro-estante.jpg', 'img/contra-corriente-mano.jpg', 'img/og-image.jpg'];
+  'img/sabana-toro.jpg', 'img/siduri-lulo.jpg', 'img/siduri-mora-cafe.jpg', 'img/contra-corriente.jpg', 'img/sabana-toro-mini.jpg', 'img/minis-330.jpg', 'img/contra-corriente-girasol.jpg', 'img/siduri-lulo-2.jpg', 'img/sabana-toro-estante.jpg', 'img/contra-corriente-mano.jpg', 'img/sabana-toro-pizza.jpg', 'img/sabana-toro-regalo.jpg', 'img/og-image.jpg'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(C).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== C).map(k => caches.delete(k)))));

@@ -19,7 +19,7 @@ App (PWA) de Cava Ancestral, tienda de vinos y licores artesanales en Caucasia, 
 En `index.html`, dentro de `VINOS`, cambia `precio:0` por el valor (ej. `precio:45000`). En 0 aparece "Precio por WhatsApp".
 
 ## Archivos
-`index.html`, `manifest.json`, `sw.js`, `README.md` y la carpeta `img/` (logo.jpg, icon-192.png, icon-512.png, sabana-toro.jpg, siduri-lulo.jpg, siduri-mora-cafe.jpg, contra-corriente.jpg, sabana-toro-mini.jpg, minis-330.jpg, contra-corriente-girasol.jpg, contra-corriente-mano.jpg, siduri-lulo-2.jpg, sabana-toro-estante.jpg, og-image.jpg).
+`index.html`, `manifest.json`, `sw.js`, `README.md` y la carpeta `img/` (logo.jpg, icon-192.png, icon-512.png, sabana-toro.jpg, siduri-lulo.jpg, siduri-mora-cafe.jpg, contra-corriente.jpg, sabana-toro-mini.jpg, minis-330.jpg, contra-corriente-girasol.jpg, contra-corriente-mano.jpg, siduri-lulo-2.jpg, sabana-toro-estante.jpg, sabana-toro-pizza.jpg, sabana-toro-regalo.jpg, og-image.jpg).
 
 Licencia: 7 nov 2026 – 7 may 2027 (6 meses).
 
